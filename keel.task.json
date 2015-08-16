@@ -1,0 +1,49 @@
+{
+	"family": "riak",
+	"containerDefinitions": [
+		{
+			"name": "riak-db",
+			"image": "likemindnetworks/riak",
+			"portMappings": [
+				{
+					"hostPort": 8098,
+					"containerPort": 8098,
+					"protocol": "tcp"
+				},
+				{
+					"hostPort": 8087,
+					"containerPort": 8087,
+					"protocol": "tcp"
+				}
+			],
+			"essential": true,
+			"mountPoints": [
+				{
+					"sourceVolume": "riak-var",
+					"containerPath": "/var/lib/riak",
+					"readOnly": false
+				},
+				{
+					"sourceVolume": "riak-var",
+					"containerPath": "/var/log/riak",
+					"readOnly": false
+				}
+			],
+			"memory": 500
+		}
+	],
+	"volumes": [
+		{
+			"name": "riak-var",
+			"host": {
+				"sourcePath": "/var/lib/riak"
+			}
+		},
+		{
+			"name": "riak-lib",
+			"host": {
+				"sourcePath": "/var/log/riak"
+			}
+		}
+	]
+}

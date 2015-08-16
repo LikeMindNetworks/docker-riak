@@ -1,0 +1,7 @@
+{
+	"cluster": "LMN",
+	"serviceName": "riak",
+	"taskDefinition": "riak:2",
+	"desiredCount": 2,
+	"clientToken": "riak:2"
+}
