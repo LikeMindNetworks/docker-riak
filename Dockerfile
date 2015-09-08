@@ -1,6 +1,6 @@
 # aviary-riak
 #
-# VERSION       1.0.6
+# VERSION       1.0.7
 
 FROM java:8
 MAINTAINER Chenhan Shen shen@likemindnetworks.com
