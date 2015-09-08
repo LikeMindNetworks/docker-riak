@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Increase open file descriptor limit
+ulimit -n 524288
+
 exec $(ls -d /usr/lib/riak/erts*)/bin/run_erl \
 	"/tmp/riak" \
 	"/var/log/riak" \
